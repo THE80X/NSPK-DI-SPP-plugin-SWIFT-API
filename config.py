@@ -44,6 +44,7 @@ config = PluginConfig(
                 payload.entry.ModuleParamConfig(key='driver', module_name=WEBDRIVER, bus=True),
                 payload.entry.ConstParamConfig(key='max_count_documents', value=50),
                 payload.entry.ConstParamConfig(key='url', value='https://developer.swift.com/apis'),
+                payload.entry.ConstParamConfig(key='timeout', value=20)
             ]
         )
     )

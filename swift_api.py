@@ -14,14 +14,15 @@ class SWIFTAPIParser(S3PParserBase):
     Парсер, использующий базовый класс парсера S3P
     """
 
-    def __init__(self, refer: S3PRefer, driver: WebDriver, url: str, max_count_documents: int = None,
+    def __init__(self, refer: S3PRefer, driver: WebDriver, url: str, timeout: int = 20, max_count_documents: int = None,
                  last_document: S3PDocument = None):
         super().__init__(refer, max_count_documents, last_document)
 
         # Тут должны быть инициализированы свойства, характерные для этого парсера. Например: WebDriver
         self.URL = url
         self._driver = driver
-        self._wait = WebDriverWait(self._driver, timeout=20)
+        self._timeout = timeout
+        self._wait = WebDriverWait(self._driver,  timeout=self._timeout)
 
     def _parse(self) -> None:
         # HOST - это главная ссылка на источник, по которому будет "бегать" парсер
