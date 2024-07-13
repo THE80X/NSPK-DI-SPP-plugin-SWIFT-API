@@ -1,4 +1,4 @@
-# NSPK-DI-SPP-plugin-epi
+# NSPK-DI-SPP-SWIFT-API
 
 ## Написанные методы
 
